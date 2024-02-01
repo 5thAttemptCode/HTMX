@@ -7,13 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/weather" method="get">
-        <div id="result"></div>
-        <label for="city">Enter city name:</label>
-        <input id="city" name="city" placeholder="Enter city name" required />
-        <button hx-get="/weather" hx-target="#result">
-          Fetch Weather
-        </button>
-      </form>
+  <form hx-trigger="submit" hx-get="/weather" hx-target="#result">
+    <div id="result"></div>
+    <label for="city">Enter city name:</label>
+    <input id="city" name="city" placeholder="Enter city name" required />
+    <button type="submit">Fetch Weather</button>
+</form>
 </body>
 </html>
